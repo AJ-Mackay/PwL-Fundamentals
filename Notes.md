@@ -16,3 +16,7 @@ Lectures Completed (23/3/21):
 * Routing Controllers
 * Passing Data
 * Resources and Controllers
+
+"Laravel Fundamentals - Views" Module
+* Introduction
+* Creating views and custom method
