@@ -12,3 +12,5 @@ Lectures Completed (23/3/21):
 "Laravel Fundamentals - Controllers" Module
 * Introduction
 * Creating Controllers
+* Laravel 8 Update
+* Routing Controllers
