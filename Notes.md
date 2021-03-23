@@ -7,3 +7,4 @@ Lectures Completed (23/3/21):
 * Route Introduction
 * Routes Part 1
 * Routes Part 2
+* Naming Routes
