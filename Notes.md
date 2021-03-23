@@ -8,3 +8,7 @@ Lectures Completed (23/3/21):
 * Routes Part 1
 * Routes Part 2
 * Naming Routes
+
+"Laravel Fundamentals - Controllers" Module
+* Introduction
+* Creating Controllers
