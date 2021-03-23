@@ -34,4 +34,4 @@ use Illuminate\Support\Facades\Route;
 //    return "This URL is ". $url;
 //}));
 
-Route::get('/post', '\app\Http\Controllers\PostsController@index');
+Route::get('/post/{id}', '\App\Http\Controllers\PostsController@index');

@@ -14,3 +14,4 @@ Lectures Completed (23/3/21):
 * Creating Controllers
 * Laravel 8 Update
 * Routing Controllers
+* Passing Data
