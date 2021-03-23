@@ -6,3 +6,4 @@ Lectures Completed (23/3/21):
 * Laravel Structure Overview
 * Route Introduction
 * Routes Part 1
+* Routes Part 2
