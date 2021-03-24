@@ -1,5 +1,4 @@
-Lectures Completed (23/3/21):
-
+Lectures Completed on 23/3/21:
 "Laravel Fundamentals - Routes" Module
 * Serving our App
 * Update - Please Watch
@@ -21,3 +20,10 @@ Lectures Completed (23/3/21):
 * Introduction
 * Creating views and custom method
 * Passing data to views
+
+---
+
+Lectures Completed on 24/3/21:
+"Laravel Fundamentals - Laravel Blade Templating Engine" Module
+* Introduction
+* Master layout setup
