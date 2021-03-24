@@ -27,3 +27,4 @@ Lectures Completed on 24/3/21:
 "Laravel Fundamentals - Laravel Blade Templating Engine" Module
 * Introduction
 * Master layout setup
+* Some more blade features
