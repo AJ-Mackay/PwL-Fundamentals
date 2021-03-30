@@ -133,3 +133,17 @@ Route::get('/create', function (){
 Route::get('/update', function (){
     Post::where('id', 6)->where('is_admin', 0)->update(['title'=>'NEW PHP TITLE', 'content'=>'I love my instructor Edwin']);
 });
+
+Route::get('/delete', function (){
+    $post = Post::find(4);
+    
+    $post->delete();
+});
+
+Route::get('/destroy', function (){
+    Post::destroy(3);
+});
+
+Route::get('/destroymany', function (){
+    Post::destroy([6,8]);
+});
