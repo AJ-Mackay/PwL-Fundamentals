@@ -129,3 +129,7 @@ Route::get('/basicupdate', function (){
 Route::get('/create', function (){
     Post::create(['title'=>'the create method', 'content'=>'Wow I am learning a lot with Edwin Diaz']);
 });
+
+Route::get('/update', function (){
+    Post::where('id', 6)->where('is_admin', 0)->update(['title'=>'NEW PHP TITLE', 'content'=>'I love my instructor Edwin']);
+});
