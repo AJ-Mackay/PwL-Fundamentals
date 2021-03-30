@@ -147,3 +147,7 @@ Route::get('/destroy', function (){
 Route::get('/destroymany', function (){
     Post::destroy([6,8]);
 });
+
+Route::get('/softdelete', function (){
+    Post::find(9)->delete();
+});
