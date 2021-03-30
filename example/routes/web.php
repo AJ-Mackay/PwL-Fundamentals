@@ -125,3 +125,7 @@ Route::get('/basicupdate', function (){
 
     $post->save();
 });
+
+Route::get('/create', function (){
+    Post::create(['title'=>'the create method', 'content'=>'Wow I am learning a lot with Edwin Diaz']);
+});
