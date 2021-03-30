@@ -79,7 +79,7 @@ use App\Models\Post;
 //      Eloquent / ORM
 // ------------------------
 
-Route::get('/read', function(){
+Route::get('/read', function (){
     $posts = Post::all();
 
     foreach($posts as $post) {
@@ -87,8 +87,14 @@ Route::get('/read', function(){
     }
 });
 
-Route::get('/find', function(){
+Route::get('/find', function (){
     $post = Post::find(4);
 
     return $post->title;
+});
+
+Route::get('/findwhere', function (){
+    $posts = Post::where('id', 3)->orderBy('id', 'desc')->take(1)->get();
+
+    return $posts;
 });
