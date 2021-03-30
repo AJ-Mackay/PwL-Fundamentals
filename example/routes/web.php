@@ -149,5 +149,23 @@ Route::get('/destroymany', function (){
 });
 
 Route::get('/softdelete', function (){
-    Post::find(9)->delete();
+    Post::find(11)->delete();
+});
+
+Route::get('/readsoftdelete', function (){
+    $post = Post::withTrashed()->where('id', 9)->get();
+
+    return $post;
+});
+
+Route::get('/readall', function (){
+    $posts = Post::withTrashed()->where('is_admin', 0)->get();
+
+    return $posts;
+});
+
+Route::get('/readallsoftdelete', function (){
+    $post = Post::onlyTrashed()->where('is_admin', 0)->get();
+
+    return $post;
 });
