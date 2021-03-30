@@ -108,3 +108,20 @@ Route::get('/findmore', function (){
 
     return $posts;
 });
+
+Route::get('/basicinsert', function (){
+    $post = new Post;
+
+    $post->title = 'new ORM title';
+    $post->content = 'Wow Eloquent is really cool, look at this content';
+
+    $post->save();
+});
+
+Route::get('/basicupdate', function (){
+    $post = Post::find(4);
+
+    $post->title = 'new ORM title 2';
+
+    $post->save();
+});
