@@ -169,3 +169,7 @@ Route::get('/readallsoftdelete', function (){
 
     return $post;
 });
+
+Route::get('/restore', function (){
+    Post::withTrashed()->where('id', 9)->restore();
+});
