@@ -173,3 +173,8 @@ Route::get('/readallsoftdelete', function (){
 Route::get('/restore', function (){
     Post::withTrashed()->where('id', 9)->restore();
 });
+
+Route::get('/forcedelete', function (){
+    Post::onlyTrashed()->where('is_admin', 0)->forceDelete();
+    // Post::withTrashed()->where('id', 11)->forceDelete();
+});
