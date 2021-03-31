@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,102 +80,111 @@ use App\Models\Post;
 //      Eloquent / ORM
 // ------------------------
 
-Route::get('/read', function (){
-    $posts = Post::all();
+//Route::get('/read', function (){
+//    $posts = Post::all();
+//
+//    foreach($posts as $post) {
+//        return $post->title;
+//    }
+//});
 
-    foreach($posts as $post) {
-        return $post->title;
-    }
-});
+//Route::get('/find', function (){
+//    $post = Post::find(4);
+//
+//    return $post->title;
+//});
 
-Route::get('/find', function (){
-    $post = Post::find(4);
+//Route::get('/findwhere', function (){
+//    $posts = Post::where('id', 3)->orderBy('id', 'desc')->take(1)->get();
+//
+//    return $posts;
+//});
 
-    return $post->title;
-});
+//Route::get('/findmore', function (){
+//    //$posts = Post::findOrFail(1);
+//    //
+//    //return $posts;
+//
+//    $posts = Post::where('users_count', '<', 50)->firstOrFail();
+//
+//    return $posts;
+//});
 
-Route::get('/findwhere', function (){
-    $posts = Post::where('id', 3)->orderBy('id', 'desc')->take(1)->get();
+//Route::get('/basicinsert', function (){
+//    $post = new Post;
+//
+//    $post->title = 'new ORM title';
+//    $post->content = 'Wow Eloquent is really cool, look at this content';
+//
+//    $post->save();
+//});
 
-    return $posts;
-});
+//Route::get('/basicupdate', function (){
+//    $post = Post::find(4);
+//
+//    $post->title = 'new ORM title 2';
+//
+//    $post->save();
+//});
 
-Route::get('/findmore', function (){
-    //$posts = Post::findOrFail(1);
-    //
-    //return $posts;
+//Route::get('/create', function (){
+//    Post::create(['title'=>'the create method', 'content'=>'Wow I am learning a lot with Edwin Diaz']);
+//});
 
-    $posts = Post::where('users_count', '<', 50)->firstOrFail();
+//Route::get('/update', function (){
+//    Post::where('id', 6)->where('is_admin', 0)->update(['title'=>'NEW PHP TITLE', 'content'=>'I love my instructor Edwin']);
+//});
 
-    return $posts;
-});
+//Route::get('/delete', function (){
+//    $post = Post::find(4);
+//    
+//    $post->delete();
+//});
 
-Route::get('/basicinsert', function (){
-    $post = new Post;
+//Route::get('/destroy', function (){
+//    Post::destroy(3);
+//});
 
-    $post->title = 'new ORM title';
-    $post->content = 'Wow Eloquent is really cool, look at this content';
+//Route::get('/destroymany', function (){
+//    Post::destroy([6,8]);
+//});
 
-    $post->save();
-});
+//Route::get('/softdelete', function (){
+//    Post::find(11)->delete();
+//});
 
-Route::get('/basicupdate', function (){
-    $post = Post::find(4);
+//Route::get('/readsoftdelete', function (){
+//    $post = Post::withTrashed()->where('id', 9)->get();
+//
+//    return $post;
+//});
 
-    $post->title = 'new ORM title 2';
+//Route::get('/readall', function (){
+//    $posts = Post::withTrashed()->where('is_admin', 0)->get();
+//
+//    return $posts;
+//});
 
-    $post->save();
-});
+//Route::get('/readallsoftdelete', function (){
+//    $post = Post::onlyTrashed()->where('is_admin', 0)->get();
+//
+//    return $post;
+//});
 
-Route::get('/create', function (){
-    Post::create(['title'=>'the create method', 'content'=>'Wow I am learning a lot with Edwin Diaz']);
-});
+//Route::get('/restore', function (){
+//    Post::withTrashed()->where('id', 9)->restore();
+//});
 
-Route::get('/update', function (){
-    Post::where('id', 6)->where('is_admin', 0)->update(['title'=>'NEW PHP TITLE', 'content'=>'I love my instructor Edwin']);
-});
+//Route::get('/forcedelete', function (){
+//    Post::onlyTrashed()->where('is_admin', 0)->forceDelete();
+//    // Post::withTrashed()->where('id', 11)->forceDelete();
+//});
 
-Route::get('/delete', function (){
-    $post = Post::find(4);
-    
-    $post->delete();
-});
+// ------------------------
+//  Eloquent Relationships
+// ------------------------
 
-Route::get('/destroy', function (){
-    Post::destroy(3);
-});
-
-Route::get('/destroymany', function (){
-    Post::destroy([6,8]);
-});
-
-Route::get('/softdelete', function (){
-    Post::find(11)->delete();
-});
-
-Route::get('/readsoftdelete', function (){
-    $post = Post::withTrashed()->where('id', 9)->get();
-
-    return $post;
-});
-
-Route::get('/readall', function (){
-    $posts = Post::withTrashed()->where('is_admin', 0)->get();
-
-    return $posts;
-});
-
-Route::get('/readallsoftdelete', function (){
-    $post = Post::onlyTrashed()->where('is_admin', 0)->get();
-
-    return $post;
-});
-
-Route::get('/restore', function (){
-    Post::withTrashed()->where('id', 9)->restore();
-});
-
-Route::get('/forcedelete', function (){
-    Post::onlyTrashed()->where('is_admin', 0)->forceDelete();
-    // Post::withTrashed()->where('id', 11)->forceDelete();
+// One to One relationship
+Route::get('/user/{id}/post', function ($id){
+    return User::find($id)->post;
 });
