@@ -188,3 +188,8 @@ use App\Models\User;
 Route::get('/user/{id}/post', function ($id){
     return User::find($id)->post;
 });
+
+// Inverse relationship
+Route::get('/post/{id}/user', function ($id){
+    return Post::find($id)->user->name;
+});
