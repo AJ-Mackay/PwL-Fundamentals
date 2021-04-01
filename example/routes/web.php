@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Country;
 
 /*
 |--------------------------------------------------------------------------
@@ -228,5 +229,9 @@ Route::get('/user/pivot', function(){
 
 // Has many through relation
 Route::get('/user/country', function() {
-    
+    $country = Country::find(8);
+
+    foreach($country->posts as $post){
+        return $post->title;
+    }
 });
