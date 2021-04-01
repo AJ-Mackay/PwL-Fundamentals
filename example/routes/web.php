@@ -225,3 +225,8 @@ Route::get('/user/pivot', function(){
         return $role->pivot->created_at;
     }
 });
+
+// Has many through relation
+Route::get('/user/country', function() {
+    
+});
