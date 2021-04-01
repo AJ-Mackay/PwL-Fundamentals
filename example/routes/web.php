@@ -216,3 +216,12 @@ Route::get('user/{id}/role', function($id){
     //    return $role->name;
     //}
 });
+
+// Accessing the intermediate/pivot/lookup table
+Route::get('/user/pivot', function(){
+    $user = User::find(1);
+
+    foreach($user->roles as $role){
+        return $role->pivot->created_at;
+    }
+});
