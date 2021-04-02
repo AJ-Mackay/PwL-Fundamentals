@@ -255,8 +255,10 @@ use App\Models\Photo;
 //});
 
 // Polymorphic relation - inverse
-Route::get('/photo/{id}/post', function($id) {
-    $photo = Photo::findOrFail($id);
+//Route::get('/photo/{id}/post', function($id) {
+//    $photo = Photo::findOrFail($id);
+//
+//    return $photo->imageable;
+//});
 
-    return $photo->imageable;
-});
+// Polymorphic relation - many to many
