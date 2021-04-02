@@ -235,3 +235,5 @@ Route::get('/user/country', function() {
         return $post->title;
     }
 });
+
+// Polymorphic relation
