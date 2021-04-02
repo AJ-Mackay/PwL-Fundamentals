@@ -186,54 +186,69 @@ use App\Models\Country;
 // ------------------------
 
 // One to One relationship
-Route::get('/user/{id}/post', function ($id){
-    return User::find($id)->post;
-});
+//Route::get('/user/{id}/post', function ($id){
+//    return User::find($id)->post;
+//});
 
 // Inverse relationship
-Route::get('/post/{id}/user', function ($id){
-    return Post::find($id)->user->name;
-});
+//Route::get('/post/{id}/user', function ($id){
+//    return Post::find($id)->user->name;
+//});
 
 // One to Many relationship
-Route::get('/posts', function (){
-    
-    $user = User::find(1);
-
-    foreach($user->posts as $post) {
-
-       echo $post->title . "<br>";
-    
-    }
-});
+//Route::get('/posts', function (){
+//    
+//    $user = User::find(1);
+//
+//    foreach($user->posts as $post) {
+//
+//       echo $post->title . "<br>";
+//    
+//    }
+//});
 
 // Many to Many relationship
-Route::get('user/{id}/role', function($id){
-    $user = User::find($id)->roles()->orderBy('id', 'desc')->get();
-
-    return $user;
-
-    //foreach($user->roles as $role){
-    //    return $role->name;
-    //}
-});
+//Route::get('user/{id}/role', function($id){
+//    $user = User::find($id)->roles()->orderBy('id', 'desc')->get();
+//
+//    return $user;
+//
+//    //foreach($user->roles as $role){
+//    //    return $role->name;
+//    //}
+//});
 
 // Accessing the intermediate/pivot/lookup table
-Route::get('/user/pivot', function(){
-    $user = User::find(1);
-
-    foreach($user->roles as $role){
-        return $role->pivot->created_at;
-    }
-});
+//Route::get('/user/pivot', function(){
+//    $user = User::find(1);
+//
+//    foreach($user->roles as $role){
+//        return $role->pivot->created_at;
+//    }
+//});
 
 // Has many through relation
-Route::get('/user/country', function() {
-    $country = Country::find(8);
+//Route::get('/user/country', function() {
+//    $country = Country::find(8);
+//
+//    foreach($country->posts as $post){
+//        return $post->title;
+//    }
+//});
 
-    foreach($country->posts as $post){
-        return $post->title;
+// Polymorphic relation
+Route::get('/user/photos', function(){
+    $user = User::find(2);
+
+    foreach($user->photos as $photo){
+        return $photo->path;
     }
 });
 
-// Polymorphic relation
+Route::get('/post/{id}/photos', function($id) {
+    $post = Post::find($id);
+
+    foreach($post->photos as $photo){
+        echo $photo->path . "<br>";
+    }
+});

@@ -60,4 +60,8 @@ class User extends Authenticatable
         // foreign key of user table = 'user_id'
         // foreign key of role table = 'role_id'
     }
+
+    public function photos(){
+        return $this->morphMany('App\Models\Photo', 'imageable');
+    }
 }
