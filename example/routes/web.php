@@ -263,18 +263,24 @@ use App\Models\Tag;
 //});
 
 // Polymorphic relation - many to many
-Route::get('/post/tag', function() {
-    $post = Post::find(1);
+//Route::get('/post/tag', function() {
+//    $post = Post::find(1);
+//
+//    foreach($post->tags as $tag){
+//        echo $tag->name;
+//    }
+//});
 
-    foreach($post->tags as $tag){
-        echo $tag->name;
-    }
-});
+//Route::get('/tag/post', function() {
+//    $tag = Tag::find(2);
+//
+//    foreach($tag->posts as $post){
+//        echo $post->title;
+//    }
+//});
 
-Route::get('/tag/post', function() {
-    $tag = Tag::find(2);
+// ------------------------
+//   Forms and Validation
+// ------------------------
 
-    foreach($tag->posts as $post){
-        echo $post->title;
-    }
-});
+Route::resource('/posts', 'PostsController');
