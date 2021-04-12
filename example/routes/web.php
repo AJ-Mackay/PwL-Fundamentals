@@ -283,4 +283,4 @@ use App\Models\Tag;
 //   Forms and Validation
 // ------------------------
 
-Route::resource('/posts', 'PostsController');
+Route::resource('/posts', 'App\Http\Controllers\PostsController');
