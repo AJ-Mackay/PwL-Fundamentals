@@ -59,7 +59,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        return "This is the show method " . $id;
+        $post = Post::findOrFail($id);
+
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -70,7 +72,9 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        return view('posts.edit', compact('post'));
     }
 
     /**
