@@ -283,4 +283,6 @@ use App\Models\Tag;
 //   Forms and Validation
 // ------------------------
 
-Route::resource('/posts', 'App\Http\Controllers\PostsController');
+Route::group(['middleware'=>'web'], function() {
+    Route::resource('/posts', 'App\Http\Controllers\PostsController');
+});
