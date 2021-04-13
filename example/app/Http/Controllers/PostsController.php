@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Http\Requests\CreatePostRequest;
 
 class PostsController extends Controller
 {
@@ -35,11 +36,8 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request)
     {
-        $this->validate($request, [
-            'title'=>'required|max:50'
-        ]);
     //  return $request->title;
 
     //  $post = new Post;
