@@ -10,7 +10,7 @@
         {!! Form::text('title', null, ['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Create Post', ['class'=>'btn-primary']) !!}
+        {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}
     </div>
 {!! Form::close() !!}
 
