@@ -37,6 +37,9 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title'=>'required|max:50'
+        ]);
     //  return $request->title;
 
     //  $post = new Post;
