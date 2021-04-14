@@ -15,6 +15,8 @@ class Post extends Model
     // protected $primaryKey = 'id;
     // --- --- --- --- --- --- --- ---
 
+    public $directory = "/images/";
+
     protected $dates = ['deleted_at'];
     
     protected $fillable = ['title', 'content', 'path'];
@@ -33,5 +35,9 @@ class Post extends Model
 
     public static function scopeNewest($query){
         return $query->orderBy('id', 'desc')->get();
+    }
+
+    public function getPathAttribute($value){
+        return $this->directory . $value;
     }
 }
