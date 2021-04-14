@@ -38,18 +38,21 @@ class PostsController extends Controller
      */
     public function store(CreatePostRequest $request)
     {
+        $file = $request->file('file');
+
+        echo $file->getClientOriginalName();
+
     //  return $request->title;
 
     //  $post = new Post;
     //  $post->title = $request->title;
     //  $post->save();
 
-    //    $input = $request->all();
-    //    $input['title'] = $request->title;
+    //  $input = $request->all();
+    //  $input['title'] = $request->title;
 
-        Post::create($request->all());
-
-        return redirect('/posts');
+    //  Post::create($request->all());
+    //  return redirect('/posts'); 
     }
 
     /**
