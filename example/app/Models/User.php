@@ -66,6 +66,10 @@ class User extends Authenticatable
     }
 
     public function getNameAttribute($value){
-        return strtoupper($value);
+        return ucfirst($value);
+    }
+
+    public function setNameAttribute($value){
+        $this->attributes['name'] = strtoupper($value);
     }
 }
