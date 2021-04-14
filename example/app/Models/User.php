@@ -64,4 +64,8 @@ class User extends Authenticatable
     public function photos(){
         return $this->morphMany('App\Models\Photo', 'imageable');
     }
+
+    public function getNameAttribute($value){
+        return strtoupper($value);
+    }
 }
